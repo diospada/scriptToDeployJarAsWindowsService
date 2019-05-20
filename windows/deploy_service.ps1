@@ -12,8 +12,10 @@ Rename-Item -Path 'WinSW.NET4.exe' -NewName $serviceNameExe -ErrorAction Silentl
 #if service is running stop it before installation
 if (Get-Process $serviceName -ErrorAction SilentlyContinue) {
   & $serviceNamePath 'stop' 
+  Start-Sleep -s 1
 }
 & $serviceNamePath 'uninstall'
+Start-Sleep -s 1
 & $serviceNamePath 'install'
 & $serviceNamePath 'start'
 
