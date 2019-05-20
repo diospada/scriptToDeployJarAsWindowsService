@@ -1,6 +1,7 @@
 param([String]$serviceName,[String]$jarName)
 $serviceNameXml = "$serviceName.xml"
 $serviceNameExe = "$serviceName.exe"
+$serviceNamePath = ".\$serviceName.exe"
 
 write-output "Installing windows service $serviceName"
 #create xml file necessary to install microservice as windows service
